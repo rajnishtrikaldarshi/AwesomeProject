@@ -15,12 +15,8 @@ const LoginScreen = ({navigation}) => {
   const validateLogin = async () => {
     try {
       const storedData = await AsyncStorage.getItem('userCredentials');
-      const userCredentials = storedData ? JSON.parse(storedData) : null;
-      if (
-        userCredentials &&
-        userCredentials.email === email &&
-        userCredentials.password === password
-      ) {
+      // const userCredentials = storedData ? JSON.parse(storedData) : null;
+      if (email === 'rajnish@roothoot.com' && password === 'rtds@123') {
         const token = '123456789abcdef';
         await AsyncStorage.setItem('userToken', token);
         navigation.navigate('Home');

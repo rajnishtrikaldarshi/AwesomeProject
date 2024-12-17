@@ -19,7 +19,9 @@ export const bottomDetailData = [
   },
   {
     name: 'Inspection Location Map',
-    onPress: navigation => {},
+    onPress: navigation => {
+      navigation.navigate('MapDetail');
+    },
   },
   {
     name: 'Chat Now',
@@ -81,4 +83,32 @@ export const termsAndConditions = [
   'AED 50 loading/unloading fees will be applied for each car.',
   'Emirates Auction shall not guarantee the registration of the classic cars.',
   'The buyer bears 200 dirhams of possession issuance fees ... In the event that the issuance of possession requires an export examination, the buyer must conduct the examination and hand it over to the Emirates Auctions to issue the possession at the buyer’s expense',
+];
+
+export const socialMediaPlatforms = [
+  {
+    id: '1',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png',
+    url: 'https://www.facebook.com',
+  },
+  {
+    id: '2',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png',
+    url: 'https://www.twitter.com',
+  },
+  {
+    id: '3',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png',
+    url: 'https://www.instagram.com',
+  },
+  {
+    id: '4',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png',
+    url: 'https://www.linkedin.com',
+  },
+  {
+    id: '5',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png',
+    url: 'https://www.youtube.com',
+  },
 ];

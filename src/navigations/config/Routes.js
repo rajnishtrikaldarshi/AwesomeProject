@@ -12,6 +12,9 @@ import MyBidScreen from '../../screens/MyBidScreen';
 import MyWatchingScreen from '../../screens/MyWatchingScreen';
 import Specifications from '../../screens/Specifications';
 import TermAndConditions from '../../screens/TermAndConditions';
+import MapDetail from '../../screens/MapDetail';
+import ContactUs from '../../screens/ContactUs';
+import SocialResponisibility from '../../screens/SocialResponisibility';
 
 // Tab Routes
 export const tabRoutes = [
@@ -78,6 +81,21 @@ const stackRoutes = [
   {
     name: 'TermAndConditions',
     component: TermAndConditions,
+    options: {headerShown: false},
+  },
+  {
+    name: 'MapDetail',
+    component: MapDetail,
+    options: {headerShown: false},
+  },
+  {
+    name: 'ContactUs',
+    component: ContactUs,
+    options: {headerShown: false},
+  },
+  {
+    name: 'SocialResponisibility',
+    component: SocialResponisibility,
     options: {headerShown: false},
   },
 ];
