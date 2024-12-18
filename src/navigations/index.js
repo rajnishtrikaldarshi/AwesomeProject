@@ -9,10 +9,7 @@ const Navigation = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <CustomStackNavigator
-          routes={stackRoutes}
-          initialRoute="SocialResponisibility"
-        />
+        <CustomStackNavigator routes={stackRoutes} initialRoute="Carousel" />
       </NavigationContainer>
     </SafeAreaProvider>
   );

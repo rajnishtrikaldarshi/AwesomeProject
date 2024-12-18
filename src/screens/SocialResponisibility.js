@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Header from '../components/Header';
-import MyComponent from '../components/SocialCardWithImage';
+import SocialBottomModal from '../components/SocialBottomModal';
+import HamburgerMenu from '../components/HamburgerMenu';
+import {userData} from '../data/constant';
 
 const SocialResponisibility = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -9,15 +11,30 @@ const SocialResponisibility = ({navigation}) => {
     setModalVisible(!modalVisible);
   };
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.container}>
       <Header
         title={'Social Responsibilities'}
         onMenuPress={toggleModal}
         onBack={() => navigation.goBack()}
       />
-      <MyComponent />
+      <SocialBottomModal visible={modalVisible} onClose={toggleModal} />
+      {modalVisible && (
+        <HamburgerMenu
+          modalVisible={modalVisible}
+          user={userData}
+          toggleModal={toggleModal}
+          navigation={navigation}
+        />
+      )}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});
 
 export default SocialResponisibility;

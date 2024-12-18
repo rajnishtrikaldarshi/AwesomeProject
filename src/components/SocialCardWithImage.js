@@ -1,56 +1,86 @@
 import React from 'react';
-import {View, Text, StyleSheet, ImageBackground} from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'; // Corrected import
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const MyComponent = () => {
+const MyComponent = ({item, onPress}) => {
   return (
-    <ImageBackground
-      source={{uri: 'https://your-image-url.com'}} // Replace with your image URL
-      style={styles.container}>
-      <View style={styles.innerContainer}>
-        <Text style={styles.text}>6 or 7 words here</Text>
-        <View style={styles.circleButton}>
-          <MaterialCommunityIcons name="plus" size={24} color="white" />
-        </View>
-      </View>
-    </ImageBackground>
+    <TouchableOpacity
+      activeOpacity={1}
+      onPress={onPress}
+      style={styles.cardContainer}>
+      <ImageBackground
+        source={{uri: item.image}}
+        style={styles.imageBackground}
+        imageStyle={styles.imageBorderRadius}>
+        <LinearGradient
+          colors={[
+            'rgba(255,255,255,0.03)',
+            'rgba(255,255,255,0.3)',
+            'rgba(255,255,255,0.7)',
+            'rgba(255,255,255,0.9)',
+            'white',
+          ]}
+          locations={[0, 0.4, 0.6, 0.8, 1]}
+          style={styles.gradientOverlay}>
+          <View style={styles.contentContainer}>
+            <Text style={styles.titleText}>
+              <Text style={{color: '#007BFF'}}>{item.title} </Text>
+              {item.subTitle}
+            </Text>
+            <View style={styles.circleButton}>
+              <MaterialCommunityIcons name="plus" size={28} color="#fff" />
+            </View>
+          </View>
+        </LinearGradient>
+      </ImageBackground>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    borderRadius: 15,
-    margin: 10,
+  cardContainer: {
+    margin: 16,
+    borderRadius: 20,
+    borderWidth: 1,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
-    elevation: 8,
+    borderColor: 'grey',
   },
-  innerContainer: {
-    backgroundColor: 'white',
+  imageBackground: {
+    height: 500,
+    justifyContent: 'flex-end',
+  },
+  imageBorderRadius: {
+    borderRadius: 15,
+  },
+  gradientOverlay: {
+    height: '70%',
+    justifyContent: 'flex-end',
+  },
+  contentContainer: {
     padding: 20,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  text: {
-    fontSize: 16,
+  titleText: {
+    fontSize: 32,
     fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 20,
+    color: '#000',
   },
   circleButton: {
     width: 50,
     height: 50,
-    borderRadius: 25,
-    backgroundColor: 'black',
+    borderRadius: 50,
+    backgroundColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'flex-end',
+    marginTop: 12,
   },
 });
 

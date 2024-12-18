@@ -112,3 +112,52 @@ export const socialMediaPlatforms = [
     url: 'https://www.youtube.com',
   },
 ];
+
+export const socialData = [
+  {
+    id: 1,
+    image:
+      'https://www.trainingjournal.com/wp-content/uploads/2023/08/AdobeStock_570773304WEB.jpg',
+    title: 'Making a Difference',
+    subTitle: ' in the Community',
+    desc: 'Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.',
+  },
+  {
+    id: 2,
+    image:
+      'https://images.unsplash.com/photo-1683721003111-070bcc053d8b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29jaWFsJTIwbWVkaWElMjBpY29uc3xlbnwwfHwwfHx8MA%3D%3D',
+    title: 'Making a Difference',
+    subTitle: ' in the Community',
+    desc: 'Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.',
+  },
+  {
+    id: 3,
+    image:
+      'https://www.canr.msu.edu/contentAsset/image/d2020446-14b2-4ed4-8262-e354397a97e3/fileAsset/filter/Resize,Jpeg/resize_w/750/jpeg_q/80',
+    title: 'Making a Difference',
+    subTitle: ' in the Community',
+    desc: 'Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.',
+  },
+  {
+    id: 4,
+    image:
+      'https://img.freepik.com/free-photo/happy-diverse-people-using-digital-devices_53876-96225.jpg',
+    title: 'Making a Difference',
+    subTitle: ' in the Community',
+    desc: 'Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.',
+  },
+  {
+    id: 5,
+    image: 'https://www.apu.apus.edu/images/site/apu/social-media.jpg',
+    title: 'Making a Difference',
+    subTitle: ' in the Community',
+    desc: 'Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.',
+  },
+  {
+    id: 6,
+    image: 'https://i.ytimg.com/vi/uaaC57tcci0/maxresdefault.jpg',
+    title: 'Making a Difference',
+    subTitle: ' in the Community',
+    desc: 'Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.Social responsibility is a moral obligation on a company or an individual to take decisions or actions that is in favour and useful to society. Social responsibility in business is commonly known as Corporate Social Responsibility or CSR.',
+  },
+];

@@ -140,11 +140,15 @@ const HamburgerMenu = ({user, toggleModal, modalVisible, navigation}) => {
               <Icon name="newspaper-outline" size={24} />
               <Text style={styles.optionText}>News</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.option}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SocialResponisibility')}
+              style={styles.option}>
               <Icon name="people-outline" size={24} />
               <Text style={styles.optionText}>Social Resoponsibilities</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.option}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ContactUs')}
+              style={styles.option}>
               <Icon name="call-outline" size={24} />
               <Text style={styles.optionText}>Contact Us</Text>
             </TouchableOpacity>
