@@ -8,6 +8,7 @@ import HamburgerMenu from '../components/HamburgerMenu';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FilterMenu from '../components/FilterMenu';
 import {userData} from '../data/constant';
+import FilterComponent from '../components/FilterComponent';
 
 const HomeScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -29,13 +30,8 @@ const HomeScreen = ({navigation}) => {
         showFilter={true}
         showSearch={true}
       />
-      <FlatList
-        data={carsData}
-        renderItem={({item}) => (
-          <InfoCard item={item} navigation={navigation} />
-        )}
-        showsHorizontalScrollIndicator={false}
-      />
+      <FilterComponent data={carsData} />
+
       {modalVisible ? (
         <HamburgerMenu
           modalVisible={modalVisible}
