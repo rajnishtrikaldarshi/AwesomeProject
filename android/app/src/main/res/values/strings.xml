@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">AwesomeProject</string>
+    <string name="app_name">Car Auction</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCV6Hvcm3v3JF5OJir3DyZ0gSTKLyugvLw</string>
 </resources>
