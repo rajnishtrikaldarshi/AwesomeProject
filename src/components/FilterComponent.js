@@ -51,8 +51,10 @@ const reducer = (state, action) => {
   }
 };
 
-const NormalItemView = ({item}) => (
-  <View style={styles.item}>
+const NormalItemView = ({item, navigation}) => (
+  <TouchableOpacity
+    onPress={() => navigation.navigate('InfoDetails', {...item})}
+    style={styles.item}>
     <Image source={{uri: item.image}} style={styles.image} />
     <View style={styles.details}>
       <Text style={styles.title}>{item.title}</Text>
@@ -60,11 +62,13 @@ const NormalItemView = ({item}) => (
       <Text style={styles.info}>Price: ${item.price.toLocaleString()}</Text>
       <Text style={styles.info}>Bids: {item.bids}</Text>
     </View>
-  </View>
+  </TouchableOpacity>
 );
 
-const CompactItemView = ({item}) => (
-  <View style={styles.itemCompact}>
+const CompactItemView = ({item, navigation}) => (
+  <TouchableOpacity
+    onPress={() => navigation.navigate('InfoDetails', {...item})}
+    style={styles.itemCompact}>
     <Image source={{uri: item.image}} style={styles.imageCompact} />
     <View style={styles.detailsCompact}>
       <Text style={styles.titleCompact}>{item.title}</Text>
@@ -72,10 +76,10 @@ const CompactItemView = ({item}) => (
       <Text style={styles.infoCompact}>Bids: {item.bids}</Text>
       <Text style={styles.infoCompact}>AED ${item.price.toLocaleString()}</Text>
     </View>
-  </View>
+  </TouchableOpacity>
 );
 
-const FilterComponent = ({data}) => {
+const FilterComponent = ({data, navigation}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -90,11 +94,11 @@ const FilterComponent = ({data}) => {
     fetchData();
   }, []);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item, navigation}) => {
     return state.viewMode === 'normal' ? (
-      <NormalItemView item={item} />
+      <NormalItemView item={item} navigation={navigation} />
     ) : (
-      <CompactItemView item={item} />
+      <CompactItemView item={item} navigation={navigation} />
     );
   };
 
@@ -220,7 +224,7 @@ const FilterComponent = ({data}) => {
       <FlatList
         data={state.items}
         keyExtractor={(item, index) => `${item.LotNo}_${index}`}
-        renderItem={renderItem}
+        renderItem={({item}) => renderItem({item, navigation})}
         key={state.viewMode}
         numColumns={state.viewMode === 'list' ? 2 : 1}
         contentContainerStyle={styles.list}

@@ -1,8 +1,7 @@
 // screens/HomeScreen.js
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {carsData} from '../data/car';
-import InfoCard from '../components/InfoCard';
 import Header from '../components/Header';
 import HamburgerMenu from '../components/HamburgerMenu';
 import Icon from 'react-native-vector-icons/Ionicons';
