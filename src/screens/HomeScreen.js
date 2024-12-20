@@ -29,8 +29,7 @@ const HomeScreen = ({navigation}) => {
         showFilter={true}
         showSearch={true}
       />
-      <FilterComponent data={carsData} />
-
+      <FilterComponent data={carsData} navigation={navigation} />
       {modalVisible ? (
         <HamburgerMenu
           modalVisible={modalVisible}
@@ -49,8 +48,6 @@ const HomeScreen = ({navigation}) => {
           data={carsData}
         />
       ) : null}
-      <View style={{marginBottom: 70}} />
-
       <View style={styles.bottomContainer}>
         <TouchableOpacity
           onPress={() => navigation.navigate('MyBids')}

@@ -15,6 +15,7 @@ import TermAndConditions from '../../screens/TermAndConditions';
 import MapDetail from '../../screens/MapDetail';
 import ContactUs from '../../screens/ContactUs';
 import SocialResponisibility from '../../screens/SocialResponisibility';
+import OurServices from '../../screens/OurServices';
 
 // Tab Routes
 export const tabRoutes = [
@@ -96,6 +97,11 @@ const stackRoutes = [
   {
     name: 'SocialResponisibility',
     component: SocialResponisibility,
+    options: {headerShown: false},
+  },
+  {
+    name: 'OurService',
+    component: OurServices,
     options: {headerShown: false},
   },
 ];

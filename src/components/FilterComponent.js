@@ -119,7 +119,7 @@ const FilterComponent = ({data, navigation}) => {
   }
 
   return (
-    <View>
+    <View style={{marginBottom: 200}}>
       <View style={styles.menu}>
         <TouchableOpacity
           style={styles.button}
