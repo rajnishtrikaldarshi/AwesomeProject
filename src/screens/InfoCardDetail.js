@@ -12,16 +12,18 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../components/Header';
 import HamburgerMenu from '../components/HamburgerMenu';
 import {bottomDetailData, userData} from '../data/constant';
+import {useCars} from '../context/CarsProvider';
 
 const {width} = Dimensions.get('window');
 
 const InfoCardDetail = ({navigation, route}) => {
   let {
+    id,
     image,
     price,
     description,
     LotNo,
-    specifications = {},
+    placeBid = false,
   } = route.params || {};
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -29,6 +31,8 @@ const InfoCardDetail = ({navigation, route}) => {
     setModalVisible(!modalVisible);
   };
 
+  let {cars, updateCar} = useCars();
+  let watchCar = cars.find(car => car.id === id)?.watchCar || false;
   return (
     <View style={styles.container}>
       <Header
@@ -256,7 +260,10 @@ const InfoCardDetail = ({navigation, route}) => {
               Share
             </Text>
           </View>
-          <View
+          <TouchableOpacity
+            onPress={() => {
+              updateCar(id, {watchCar: !watchCar});
+            }}
             style={{
               flex: 1,
               padding: 16,
@@ -266,7 +273,11 @@ const InfoCardDetail = ({navigation, route}) => {
               alignItems: 'center',
               borderRadius: 8,
             }}>
-            <Icon name="eye-outline" size={24} color="#fff" />
+            <Icon
+              name={watchCar ? 'eye-off-outline' : 'eye-outline'}
+              size={24}
+              color="#fff"
+            />
             <Text
               style={{
                 color: '#fff',
@@ -274,17 +285,31 @@ const InfoCardDetail = ({navigation, route}) => {
                 fontSize: 16,
                 fontWeight: 'bold',
               }}>
-              Watch
+              {watchCar ? 'Unwatch' : 'Watch'}
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
 
-      {/* Bid Now Button */}
       <View style={styles.bottomContainer}>
-        <TouchableOpacity style={styles.bidButton}>
-          <Text style={styles.bidButtonText}>BID NOW</Text>
-        </TouchableOpacity>
+        {placeBid ? (
+          <TouchableOpacity
+            onPress={() => {
+              updateCar(id, {placeBid: false, bidPrice: null});
+              navigation.goBack();
+            }}
+            style={styles.bidButton}>
+            <Text style={styles.bidButtonText}>REMOVE BID</Text>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('BidDetail', {...route?.params});
+            }}
+            style={styles.bidButton}>
+            <Text style={styles.bidButtonText}>BID NOW</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

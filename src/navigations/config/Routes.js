@@ -16,6 +16,7 @@ import MapDetail from '../../screens/MapDetail';
 import ContactUs from '../../screens/ContactUs';
 import SocialResponisibility from '../../screens/SocialResponisibility';
 import OurServices from '../../screens/OurServices';
+import BidDetail from '../../screens/BidDetail';
 
 // Tab Routes
 export const tabRoutes = [
@@ -102,6 +103,11 @@ const stackRoutes = [
   {
     name: 'OurService',
     component: OurServices,
+    options: {headerShown: false},
+  },
+  {
+    name: 'BidDetail',
+    component: BidDetail,
     options: {headerShown: false},
   },
 ];

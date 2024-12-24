@@ -79,7 +79,7 @@ const CompactItemView = ({item, navigation}) => (
   </TouchableOpacity>
 );
 
-const FilterComponent = ({data, navigation}) => {
+const FilterComponent = ({data, headerFilter = false, navigation}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -120,106 +120,114 @@ const FilterComponent = ({data, navigation}) => {
 
   return (
     <View style={{marginBottom: 200}}>
-      <View style={styles.menu}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => dispatch({type: 'SORT', payload: {key: 'price'}})}>
-          <Text style={styles.buttonText}>
-            Price
-            {state.sortBy === 'price' ? (
-              state.sortOrder === 'asc' ? (
+      {!headerFilter ? (
+        <View style={styles.menu}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => dispatch({type: 'SORT', payload: {key: 'price'}})}>
+            <Text style={styles.buttonText}>
+              Price
+              {state.sortBy === 'price' ? (
+                state.sortOrder === 'asc' ? (
+                  <MaterialCommunityIcons
+                    name="menu-down"
+                    size={16}
+                    color="#007bff"
+                  />
+                ) : (
+                  <MaterialCommunityIcons
+                    name="menu-up"
+                    size={16}
+                    color="#007bff"
+                  />
+                )
+              ) : (
                 <MaterialCommunityIcons
                   name="menu-down"
                   size={16}
                   color="#007bff"
                 />
+              )}
+            </Text>
+          </TouchableOpacity>
+          <View
+            style={{height: '100%', width: 2, backgroundColor: '#007bff'}}
+          />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => dispatch({type: 'SORT', payload: {key: 'year'}})}>
+            <Text style={styles.buttonText}>
+              Year
+              {state.sortBy === 'year' ? (
+                state.sortOrder === 'asc' ? (
+                  <MaterialCommunityIcons
+                    name="menu-down"
+                    size={16}
+                    color="#007bff"
+                  />
+                ) : (
+                  <MaterialCommunityIcons
+                    name="menu-up"
+                    size={16}
+                    color="#007bff"
+                  />
+                )
               ) : (
-                <MaterialCommunityIcons
-                  name="menu-up"
-                  size={16}
-                  color="#007bff"
-                />
-              )
-            ) : (
-              <MaterialCommunityIcons
-                name="menu-down"
-                size={16}
-                color="#007bff"
-              />
-            )}
-          </Text>
-        </TouchableOpacity>
-        <View style={{height: '100%', width: 2, backgroundColor: '#007bff'}} />
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => dispatch({type: 'SORT', payload: {key: 'year'}})}>
-          <Text style={styles.buttonText}>
-            Year
-            {state.sortBy === 'year' ? (
-              state.sortOrder === 'asc' ? (
                 <MaterialCommunityIcons
                   name="menu-down"
                   size={16}
                   color="#007bff"
                 />
+              )}
+            </Text>
+          </TouchableOpacity>
+          <View
+            style={{height: '100%', width: 2, backgroundColor: '#007bff'}}
+          />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => dispatch({type: 'SORT', payload: {key: 'bids'}})}>
+            <Text style={styles.buttonText}>
+              Bid
+              {state.sortBy === 'bids' ? (
+                state.sortOrder === 'asc' ? (
+                  <MaterialCommunityIcons
+                    name="menu-down"
+                    size={24}
+                    color="#007bff"
+                  />
+                ) : (
+                  <MaterialCommunityIcons
+                    name="menu-up"
+                    size={24}
+                    color="#007bff"
+                  />
+                )
               ) : (
-                <MaterialCommunityIcons
-                  name="menu-up"
-                  size={16}
-                  color="#007bff"
-                />
-              )
-            ) : (
-              <MaterialCommunityIcons
-                name="menu-down"
-                size={16}
-                color="#007bff"
-              />
-            )}
-          </Text>
-        </TouchableOpacity>
-        <View style={{height: '100%', width: 2, backgroundColor: '#007bff'}} />
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => dispatch({type: 'SORT', payload: {key: 'bids'}})}>
-          <Text style={styles.buttonText}>
-            Bid
-            {state.sortBy === 'bids' ? (
-              state.sortOrder === 'asc' ? (
                 <MaterialCommunityIcons
                   name="menu-down"
                   size={24}
                   color="#007bff"
                 />
+              )}
+            </Text>
+          </TouchableOpacity>
+          <View
+            style={{height: '100%', width: 2, backgroundColor: '#007bff'}}
+          />
+          <TouchableOpacity
+            style={{...styles.button, marginRight: 4}}
+            onPress={() => dispatch({type: 'TOGGLE_VIEW'})}>
+            <Text style={{...styles.buttonText, padding: 0}}>
+              {state.viewMode === 'normal' ? (
+                <Entypo name="grid" size={28} color="#007bff" />
               ) : (
-                <MaterialCommunityIcons
-                  name="menu-up"
-                  size={24}
-                  color="#007bff"
-                />
-              )
-            ) : (
-              <MaterialCommunityIcons
-                name="menu-down"
-                size={24}
-                color="#007bff"
-              />
-            )}
-          </Text>
-        </TouchableOpacity>
-        <View style={{height: '100%', width: 2, backgroundColor: '#007bff'}} />
-        <TouchableOpacity
-          style={{...styles.button, marginRight: 4}}
-          onPress={() => dispatch({type: 'TOGGLE_VIEW'})}>
-          <Text style={{...styles.buttonText, padding: 0}}>
-            {state.viewMode === 'normal' ? (
-              <Entypo name="grid" size={28} color="#007bff" />
-            ) : (
-              <SimpleLineIcons name="list" size={28} color="#007bff" />
-            )}
-          </Text>
-        </TouchableOpacity>
-      </View>
+                <SimpleLineIcons name="list" size={28} color="#007bff" />
+              )}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
 
       <FlatList
         data={state.items}

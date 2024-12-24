@@ -22,7 +22,7 @@ const Header = ({
         <Text style={styles.title}>{title}</Text>
 
         {showFilter ? (
-          <TouchableOpacity onPress={toggleFilter}>
+          <TouchableOpacity onPress={() => toggleFilter && toggleFilter()}>
             <AntIcon
               name="filter"
               size={24}

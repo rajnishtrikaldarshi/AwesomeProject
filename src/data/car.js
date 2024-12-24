@@ -1,5 +1,6 @@
 export const carsData = [
   {
+    id: 1,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg/400px-2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg',
     title: 'Mazda MX-5',
@@ -13,6 +14,7 @@ export const carsData = [
       'The Mazda MX-5 is a lightweight two-seater roadster known for its nimble handling and affordable performance.',
   },
   {
+    id: 2,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VW_Kuebelwagen_1.jpg/400px-VW_Kuebelwagen_1.jpg',
     title: 'Volkswagen Kübelwagen',
@@ -25,6 +27,7 @@ export const carsData = [
       'The Volkswagen Kübelwagen is a historic military vehicle designed during World War II, renowned for its reliability.',
   },
   {
+    id: 3,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/2014_Porsche_Cayenne_%2892A_MY14%29_GTS_wagon_%282015-08-07%29_01.jpg/400px-2014_Porsche_Cayenne_%2892A_MY14%29_GTS_wagon_%282015-08-07%29_01.jpg',
     title: 'Porsche Cayenne',
@@ -38,6 +41,7 @@ export const carsData = [
       'The Porsche Cayenne is a luxury SUV that combines sports car performance with family-friendly practicality.',
   },
   {
+    id: 4,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Vintage_car_at_the_Wirral_Bus_%26_Tram_Show_-_DSC03336.JPG/400px-Vintage_car_at_the_Wirral_Bus_%26_Tram_Show_-_DSC03336.JPG',
     title: 'Vauxhall Chevette',
@@ -51,6 +55,7 @@ export const carsData = [
       'The Vauxhall Chevette is a compact car popular in the 1970s for its affordability and efficiency.',
   },
   {
+    id: 5,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Dynamixion_car_by_Buckminster_Fuller_1933_%28side_views%29.jpg/400px-Dynamixion_car_by_Buckminster_Fuller_1933_%28side_views%29.jpg',
     title: 'Dymaxion car',
@@ -64,6 +69,7 @@ export const carsData = [
       'The Dymaxion car is an experimental concept vehicle designed by Buckminster Fuller, emphasizing aerodynamics and efficiency.',
   },
   {
+    id: 6,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ford_Crown_Victoria_LX.jpg/400px-Ford_Crown_Victoria_LX.jpg',
     title: 'Ford Crown Victoria',
@@ -77,6 +83,7 @@ export const carsData = [
       'The Ford Crown Victoria is a full-size sedan, widely recognized as a favorite for police and taxi fleets.',
   },
   {
+    id: 7,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Plymouth_Superbird.jpg/400px-Plymouth_Superbird.jpg',
     title: 'Plymouth Superbird',
@@ -90,6 +97,7 @@ export const carsData = [
       'The Plymouth Superbird is a classic muscle car famous for its aerodynamic design and racing legacy.',
   },
   {
+    id: 8,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/2nd-Saab-9000-hatch.jpg/400px-2nd-Saab-9000-hatch.jpg',
     title: 'Saab 9000',
@@ -103,6 +111,7 @@ export const carsData = [
       'The Saab 9000 is an executive car blending Scandinavian design with cutting-edge safety features.',
   },
   {
+    id: 9,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/2003-2005_Pontiac_Sunfire.jpg/400px-2003-2005_Pontiac_Sunfire.jpg',
     title: 'Pontiac Sunfire',
@@ -116,6 +125,7 @@ export const carsData = [
       'The Pontiac Sunfire is a compact car with a sporty design, offering an affordable and fun driving experience.',
   },
   {
+    id: 10,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/1971_AMC_Javelin_SST_red_Kenosha_street.JPG/400px-1971_AMC_Javelin_SST_red_Kenosha_street.JPG',
     title: 'AMC Javelin',
@@ -129,6 +139,7 @@ export const carsData = [
       'The AMC Javelin is a distinctive pony car known for its bold styling and competitive performance.',
   },
   {
+    id: 11,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Jaguar_X-Type_Estate_front_20080731.jpg/400px-Jaguar_X-Type_Estate_front_20080731.jpg',
     title: 'Jaguar X-Type',
@@ -142,6 +153,7 @@ export const carsData = [
       'The Jaguar X-Type is a stylish compact executive car designed to bring Jaguar luxury to a broader audience.',
   },
   {
+    id: 12,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VW_Phaton_%282._Facelift%29_%E2%80%93_Frontansicht%2C_7._Mai_2011%2C_D%C3%BCsseldorf.jpg/400px-VW_Phaton_%282._Facelift%29_%E2%80%93_Frontansicht%2C_7._Mai_2011%2C_D%C3%BCsseldorf.jpg',
     title: 'Volkswagen Phaeton',
@@ -155,6 +167,7 @@ export const carsData = [
       'The Volkswagen Phaeton is a full-size luxury car that epitomizes understated elegance and advanced engineering.',
   },
   {
+    id: 13,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Pontiac_G6.jpg/400px-Pontiac_G6.jpg',
     title: 'Pontiac G6',
@@ -168,6 +181,7 @@ export const carsData = [
       'The Pontiac G6 is a midsize car offering a comfortable ride and a blend of performance and practicality.',
   },
   {
+    id: 14,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Ford500a.JPG/400px-Ford500a.JPG',
     title: 'Ford Five Hundred',
@@ -182,6 +196,7 @@ export const carsData = [
   },
 
   {
+    id: 15,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/PontiacSolstice.jpg/400px-PontiacSolstice.jpg',
     title: 'Pontiac Solstice',
@@ -195,6 +210,7 @@ export const carsData = [
       'The Ford Five Hundred is a spacious full-size sedan known for its roomy interior and smooth driving experience.',
   },
   {
+    id: 16,
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Fiat_tipo_f.jpg/400px-Fiat_tipo_f.jpg',
     title: 'Fiat Tipo',

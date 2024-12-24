@@ -1,19 +1,21 @@
 // screens/HomeScreen.js
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {carsData} from '../data/car';
 import Header from '../components/Header';
 import HamburgerMenu from '../components/HamburgerMenu';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FilterMenu from '../components/FilterMenu';
 import {userData} from '../data/constant';
 import FilterComponent from '../components/FilterComponent';
+import {useCars} from '../context/CarsProvider';
 
 const HomeScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const toggleModal = () => {
     setModalVisible(prev => !prev);
   };
+
+  const {cars, updateCar} = useCars();
 
   const [filterVisible, setFilterVisible] = useState(false);
   const toggleFilter = () => {
@@ -29,7 +31,7 @@ const HomeScreen = ({navigation}) => {
         showFilter={true}
         showSearch={true}
       />
-      <FilterComponent data={carsData} navigation={navigation} />
+      <FilterComponent data={cars} navigation={navigation} />
       {modalVisible ? (
         <HamburgerMenu
           modalVisible={modalVisible}
@@ -45,7 +47,7 @@ const HomeScreen = ({navigation}) => {
           user={userData}
           toggleModal={toggleFilter}
           navigation={navigation}
-          data={carsData}
+          data={cars}
         />
       ) : null}
       <View style={styles.bottomContainer}>
