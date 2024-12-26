@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet, Linking} from 'react-native';
 import EmailUs from '../components/EmailUs';
 import Header from '../components/Header';
 import HamburgerMenu from '../components/HamburgerMenu';
 import {userData} from '../data/constant';
 import LiveChatButton from '../components/LiveChatButton';
+import {openEmail} from '../PureFunctions';
 
 const ContactUs = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -13,7 +14,10 @@ const ContactUs = ({navigation}) => {
     setModalVisible(!modalVisible);
   };
 
-  // Data for rendering items
+  const handleEmailClick = () => {
+    openEmail('rajnish@roothoot.com');
+  };
+
   const contactItems = [
     {
       id: '1',
@@ -23,6 +27,7 @@ const ContactUs = ({navigation}) => {
       desc: 'Email Address',
       desc1: 'rajnish@roothoot.com',
       icon: 'mail-unread-outline',
+      onPress: handleEmailClick,
     },
     {
       id: '2',
@@ -32,6 +37,9 @@ const ContactUs = ({navigation}) => {
       desc: 'Mobile',
       desc1: '+91 8780359890',
       icon: 'headset-outline',
+      onPress: () => {
+        Linking.openURL('tel:+918780359890');
+      },
     },
     {
       id: '3',
@@ -50,6 +58,7 @@ const ContactUs = ({navigation}) => {
       desc1={item.desc1}
       icon={item.icon}
       socialProfile={item.socialProfile}
+      onPress={item.onPress}
     />
   );
 
@@ -87,7 +96,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
   },
   listContent: {
-    paddingBottom: 80,
+    paddingBottom: 180,
   },
   liveChatContainer: {
     position: 'absolute',

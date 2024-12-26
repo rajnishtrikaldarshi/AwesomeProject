@@ -1,9 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SocialMediaList from './SocialMedalList';
 
-const EmailUs = ({title, desc, subTitle, desc1, icon, socialProfile}) => {
+const EmailUs = ({
+  title,
+  desc,
+  subTitle,
+  desc1,
+  icon,
+  socialProfile,
+  onPress,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -13,7 +21,9 @@ const EmailUs = ({title, desc, subTitle, desc1, icon, socialProfile}) => {
         {desc && desc1 ? (
           <View style={styles.row}>
             <Text style={styles.columnText}>{desc}</Text>
-            <Text style={styles.columnSubText}>{desc1}</Text>
+            <TouchableOpacity onPress={() => onPress && onPress()}>
+              <Text style={styles.columnSubText}>{desc1}</Text>
+            </TouchableOpacity>
           </View>
         ) : null}
       </View>

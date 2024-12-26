@@ -13,6 +13,7 @@ import Header from '../components/Header';
 import HamburgerMenu from '../components/HamburgerMenu';
 import {bottomDetailData, userData} from '../data/constant';
 import {useCars} from '../context/CarsProvider';
+import { sharePost } from '../PureFunctions';
 
 const {width} = Dimensions.get('window');
 
@@ -239,7 +240,10 @@ const InfoCardDetail = ({navigation, route}) => {
             margin: 16,
             marginBottom: 130,
           }}>
-          <View
+          <TouchableOpacity
+            onPress={() =>
+              description && image && sharePost(description, image)
+            }
             style={{
               flex: 1,
               padding: 16,
@@ -259,7 +263,7 @@ const InfoCardDetail = ({navigation, route}) => {
               }}>
               Share
             </Text>
-          </View>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
               updateCar(id, {watchCar: !watchCar});
