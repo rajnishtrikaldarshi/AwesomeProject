@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, PermissionsAndroid, Platform} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import Header from '../components/Header';
 import HamburgerMenu from '../components/HamburgerMenu';
 import {userData} from '../data/constant';
@@ -53,13 +53,19 @@ const MapDetail = ({navigation}) => {
         provider={PROVIDER_GOOGLE} // remove if not using Google Maps
         style={{flex: 1}}
         initialRegion={{
-          latitude: 40.712776, // New York City latitude
-          longitude: -74.005974, // New York City longitude
+          latitude: 17.360589,
+          longitude: 78.4740613,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-        showsUserLocation={true}
-      />
+        showsUserLocation={true}>
+        <Marker
+          coordinate={{latitude: 17.360589, longitude: 78.4740613}}
+          title="I am here"
+          description="This is my current location"
+          pinColor="#000000"
+        />
+      </MapView>
     </View>
   );
 };
