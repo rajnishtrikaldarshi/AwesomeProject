@@ -17,6 +17,7 @@ import ContactUs from '../../screens/ContactUs';
 import SocialResponisibility from '../../screens/SocialResponisibility';
 import OurServices from '../../screens/OurServices';
 import BidDetail from '../../screens/BidDetail';
+import Chat from '../../screens/Chat';
 
 // Tab Routes
 export const tabRoutes = [
@@ -88,6 +89,11 @@ const stackRoutes = [
   {
     name: 'MapDetail',
     component: MapDetail,
+    options: {headerShown: false},
+  },
+  {
+    name: 'Chat',
+    component: Chat,
     options: {headerShown: false},
   },
   {

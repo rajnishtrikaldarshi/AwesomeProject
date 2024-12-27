@@ -25,7 +25,9 @@ export const bottomDetailData = [
   },
   {
     name: 'Chat Now',
-    onPress: navigation => {},
+    onPress: navigation => {
+      navigation.navigate('Chat');
+    },
   },
 ];
 
