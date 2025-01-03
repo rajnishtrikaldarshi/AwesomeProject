@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   ActivityIndicator,
+  TextInput,
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
@@ -25,7 +26,12 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_ITEMS':
-      return {...state, items: action.payload, loading: false};
+      return {
+        ...state,
+        items: action.payload,
+        filteredItems: action.payload,
+        loading: false,
+      };
 
     case 'SET_ERROR':
       return {...state, error: action.payload, loading: false};
@@ -34,16 +40,36 @@ const reducer = (state, action) => {
       const {key} = action.payload;
       const sortOrder =
         state.sortBy === key && state.sortOrder === 'asc' ? 'desc' : 'asc';
-      const sortedItems = [...state.items].sort((a, b) => {
+      const sortedItems = [...state.filteredItems].sort((a, b) => {
         if (sortOrder === 'asc') return a[key] - b[key];
         return b[key] - a[key];
       });
-      return {...state, items: sortedItems, sortBy: key, sortOrder};
+      return {
+        ...state,
+        filteredItems: sortedItems,
+        sortBy: key,
+        sortOrder,
+      };
 
     case 'TOGGLE_VIEW':
       return {
         ...state,
         viewMode: state.viewMode === 'normal' ? 'list' : 'normal',
+      };
+
+    case 'SET_SEARCH_QUERY':
+      const searchQuery = action.payload.toLowerCase();
+      const filteredItems = state.items.filter(item =>
+        Object.values(item).some(value =>
+          value.toString().toLowerCase().includes(searchQuery),
+        ),
+      );
+
+      console.log(filteredItems);
+      return {
+        ...state,
+        searchQuery: action.payload,
+        filteredItems,
       };
 
     default:
@@ -79,7 +105,13 @@ const CompactItemView = ({item, navigation}) => (
   </TouchableOpacity>
 );
 
-const FilterComponent = ({data, headerFilter = false, navigation}) => {
+const FilterComponent = ({
+  data,
+  headerFilter = false,
+  navigation,
+  searchVisible,
+  setSearchVisible,
+}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -229,8 +261,29 @@ const FilterComponent = ({data, headerFilter = false, navigation}) => {
         </View>
       ) : null}
 
+      {searchVisible && (
+        <View>
+          <TextInput
+            style={{
+              backgroundColor: 'white',
+              padding: 16,
+              margin: 16,
+              marginTop: 8,
+            }}
+            placeholder="search"
+            onChangeText={text =>
+              dispatch({type: 'SET_SEARCH_QUERY', payload: text})
+            }
+          />
+          <TouchableOpacity
+            onPress={() => setSearchVisible(prev => !prev)}
+            style={{position: 'absolute', right: 32, top: 20}}>
+            <MaterialCommunityIcons size={30} name="close" />
+          </TouchableOpacity>
+        </View>
+      )}
       <FlatList
-        data={state.items}
+        data={state.filteredItems}
         keyExtractor={(item, index) => `${item.LotNo}_${index}`}
         renderItem={({item}) => renderItem({item, navigation})}
         key={state.viewMode}

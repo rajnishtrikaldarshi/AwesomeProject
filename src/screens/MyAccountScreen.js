@@ -27,7 +27,13 @@ const MyAccountScreen = ({navigation}) => {
         <Text style={styles.sectionLabel}>Your Activity</Text>
         <View style={styles.rowContainer}>
           {[
-            {name: 'My Bids', icon: 'hammer-outline'},
+            {
+              name: 'My Bids',
+              icon: 'hammer-outline',
+              onPress: () => {
+                navigation.navigate('MyBids');
+              },
+            },
             {name: 'My Wishlist', icon: 'heart-outline'},
             {name: 'My Won Items', icon: 'trophy-outline'},
           ].map((item, index) => (
@@ -41,7 +47,13 @@ const MyAccountScreen = ({navigation}) => {
           {[
             {name: 'My Cart', icon: 'cart-outline'},
             {name: 'My Purchases', icon: 'lock-closed-outline'},
-            {name: 'Recent Watching', icon: 'eye-outline'},
+            {
+              name: 'Recent Watching',
+              icon: 'eye-outline',
+              onPress: () => {
+                navigation.navigate('MyWatching');
+              },
+            },
           ].map((item, index) => (
             <View style={styles.activityCard} key={index}>
               <Icon name={item.icon} size={40} color="#000" />

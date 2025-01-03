@@ -10,6 +10,7 @@ const Header = ({
   title = 'Auction House',
   showFilter = false,
   showSearch = false,
+  setSearchVisible,
 }) => {
   return (
     <>
@@ -34,7 +35,8 @@ const Header = ({
           </TouchableOpacity>
         ) : null}
         {showSearch ? (
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSearchVisible && setSearchVisible(prev => !prev)}>
             <Icon name="search" size={24} color="#FFFFFF" />
           </TouchableOpacity>
         ) : null}

@@ -11,6 +11,7 @@ import {useCars} from '../context/CarsProvider';
 
 const HomeScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false);
   const toggleModal = () => {
     setModalVisible(prev => !prev);
   };
@@ -30,8 +31,14 @@ const HomeScreen = ({navigation}) => {
         toggleFilter={toggleFilter}
         showFilter={true}
         showSearch={true}
+        setSearchVisible={setSearchVisible}
       />
-      <FilterComponent data={cars} navigation={navigation} />
+      <FilterComponent
+        data={cars}
+        navigation={navigation}
+        searchVisible={searchVisible}
+        setSearchVisible={setSearchVisible}
+      />
       {modalVisible ? (
         <HamburgerMenu
           modalVisible={modalVisible}
