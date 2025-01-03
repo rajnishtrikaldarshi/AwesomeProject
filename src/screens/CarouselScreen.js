@@ -42,8 +42,6 @@ const CarouselScreen = ({navigation}) => {
       const token = await AsyncStorage.getItem('userToken');
       if (token) {
         navigation.replace('Home');
-      } else {
-        navigation.replace('Login');
       }
     };
 
@@ -65,12 +63,6 @@ const CarouselScreen = ({navigation}) => {
     const index = Math.round(event.nativeEvent.contentOffset.x / width);
     setCurrentIndex(index);
   };
-
-  // const handleDotPress = index => {
-  //   flatListRef.current.scrollToIndex({index, animated: true});
-  //   setCurrentIndex(index);
-  // };
-
   return (
     <View style={styles.container}>
       <FlatList
@@ -89,17 +81,6 @@ const CarouselScreen = ({navigation}) => {
         )}
         keyExtractor={item => item.id.toString()}
       />
-
-      {/* <View style={styles.dotsContainer}>
-        {carouselData.map((_, index) => (
-          <TouchableOpacity
-            key={index}
-            style={[styles.dot, currentIndex === index && styles.activeDot]}
-            onPress={() => handleDotPress(index)}
-          />
-        ))}
-      </View> */}
-
       <TouchableOpacity
         style={styles.getStartedButton}
         onPress={() => navigation.navigate('Login')}>
