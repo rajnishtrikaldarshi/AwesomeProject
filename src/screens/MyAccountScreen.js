@@ -5,6 +5,7 @@ import ProfileSection from '../components/ProfileSection';
 import RowItem from '../components/RowItem';
 import TextWithArrow from '../components/TextWithArrow';
 import Icon from 'react-native-vector-icons/Ionicons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MyAccountScreen = ({navigation}) => {
   return (
@@ -61,10 +62,23 @@ const MyAccountScreen = ({navigation}) => {
         {[
           {icon: 'git-compare-outline', text: 'Communication Prefernces'},
           {icon: 'trash-outline', text: 'Delete my Account'},
-          {icon: 'log-out-outline', text: 'Logout'},
+          {
+            icon: 'log-out-outline',
+            onPress: async () => {
+              await AsyncStorage.removeItem('userToken');
+              navigation.navigate('Login');
+            },
+            text: 'Logout',
+          },
         ].map((item, index) => (
           <React.Fragment key={index}>
-            <RowItem iconName={item.icon} text={item.text} onPress={() => {}} />
+            <RowItem
+              iconName={item.icon}
+              text={item.text}
+              onPress={() => {
+                item.onPress && item.onPress();
+              }}
+            />
             {index < 1 && <View style={styles.divider} />}
           </React.Fragment>
         ))}
