@@ -65,7 +65,6 @@ const reducer = (state, action) => {
         ),
       );
 
-      console.log(filteredItems);
       return {
         ...state,
         searchQuery: action.payload,
